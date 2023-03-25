@@ -8,6 +8,7 @@
 <th>Price</th>
 <th>Year</th>
 <th>FitnessLevel</th>
+<th>Instructor</ th>
 </tr>
 </thead>
 @foreach (var fitnesslist in fitnesslists)
@@ -18,6 +19,7 @@
         <th><input @bind="fitnesslist.Price" /></th>
         <th><input @bind="fitnesslist.Year" /></th>
         <th><input @bind="fitnesslist.FitnessLevel" /></th>
+        <th><input @bind="fitnesslist.Instructor" /></th>
         <Counter/>
 </tr>
 </tbody>

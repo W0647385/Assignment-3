@@ -8,5 +8,7 @@ public class Fitness
 
     public string? FitnessLevel { get; set; }
 
+    public string? Instructor { get; set; }
+
     public bool IsDone { get; set; }
 }
