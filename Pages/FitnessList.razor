@@ -1,0 +1,44 @@
+@page "/fitnesslist"
+<h5>Add fitnesslist (@fitnesslists.Count(fitnesslist => !fitnesslist.IsDone))</h5>
+<table>
+
+<thead>
+<tr>
+<th>Title</th>
+<th>Price</th>
+<th>Year</th>
+<th>FitnessLevel</th>
+</tr>
+</thead>
+@foreach (var fitnesslist in fitnesslists)
+{
+    <tbody>
+    <tr>
+        <th><input @bind="fitnesslist.Title" /></th>
+        <th><input @bind="fitnesslist.Price" /></th>
+        <th><input @bind="fitnesslist.Year" /></th>
+        <th><input @bind="fitnesslist.FitnessLevel" /></th>
+        <Counter/>
+</tr>
+</tbody>
+
+}
+</table>
+
+<input placeholder="fitnesslist" @bind="newfitnesslist" />
+<button @onclick="Addfitnesslist">Add Fitness List</button>
+
+@code {
+    private List<Fitness> fitnesslists = new();
+
+    private string? newfitnesslist;
+
+    private void Addfitnesslist()
+    {
+        if (!string.IsNullOrWhiteSpace(newfitnesslist))
+        {
+            fitnesslists.Add(new Fitness { Title = newfitnesslist});
+            newfitnesslist = string.Empty;
+        }
+    }
+}
