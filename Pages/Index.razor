@@ -1,7 +1,14 @@
 ﻿@page "/"
+@inject IJSRuntime JsRuntime
 
-<h1>Fitness App</h1>
+<h1>Welcome to @ThemeName</h1>
 
-<h2>Chelsea Dalton</h2>
-<p> Time : @DateTime.Now</p>
-<SurveyPrompt Title="How is Blazor working for you?" />
+<p>Developed by @MyName</p>
+<p> The current date and time is: @DateTime.Now</p>
+
+@code {
+    public string ThemeName => "Fitness";
+
+    public string MyName => "Chelsea Dalton";
+}
+
